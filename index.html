@@ -79,6 +79,8 @@
 
   <div id='map'></div>
   <script>
+    mapboxgl.accessToken = "pk.eyJ1Ijoiamh5bmVrIiwiYSI6ImNsNnh3ZzN4cTBwczMzaXBkNmhzMXJjcGQifQ.qMqh0TtOoi7Muf2-wZyVgA";
+    const GOOGLE_DOC = "https://docs.google.com/spreadsheets/d/1VkgMNOnD-uC_k8TVMwYkLtBL9tFy7x9nAx2Akkzl6m4/gviz/tq?tqx=out:csv&sheet=Sheet1"
 
     var transformRequest = (url, resourceType) => {
       var isMapboxRequest =
@@ -90,9 +92,7 @@
           : url
       };
     };
-    //YOUR TURN: add your Mapbox token
-    
-    mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN; //Mapbox token 
+
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/dark-v10', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
@@ -105,7 +105,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: process.env.GOOGLE_DOCS_LIST,
+        url: GOOGLE_DOC,
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
