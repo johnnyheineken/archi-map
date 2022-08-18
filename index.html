@@ -140,18 +140,18 @@
                                     'step',
                                     ['get', 'point_count'],
                                     '#51bbd6',
-                                    2,
-                                    '#f1f075',
                                     3,
+                                    '#f1f075',
+                                    5,
                                     '#f28cb1'
                                 ],
                                 'circle-radius': [
                                     'step',
                                     ['get', 'point_count'],
                                     20,
-                                    2,
-                                    30,
                                     3,
+                                    30,
+                                    5,
                                     40
                                 ]
                             }
@@ -164,7 +164,7 @@
                             layout: {
                                 'text-field': '{point_count}',
                                 'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-                                'text-size': 12
+                                'text-size': 30
                             }
                         });
                         map.addLayer({
@@ -174,7 +174,7 @@
                             filter: ['!', ['has', 'point_count']],
                             paint: {
                                 'circle-color': '#11b4da',
-                                'circle-radius': 4,
+                                'circle-radius': 10,
                                 'circle-stroke-width': 1,
                                 'circle-stroke-color': '#fff'
                             }
